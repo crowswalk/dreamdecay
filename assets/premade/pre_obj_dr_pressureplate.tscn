@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sprites/spr_obj_dr_button.tres" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/g_obj_pressureplate.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/spr_obj_dr_buttonpressed.tres" type="Texture" id=3]
+[ext_resource path="res://assets/textures/tx_hardglow_64.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 6, 6 )
+
+[sub_resource type="OccluderPolygon2D" id=24]
+polygon = PoolVector2Array( -7, -2, 11, -2, 11, 0, 10, 0, 10, 1, -6, 1, -6, 0, -7, 0 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 23, 22 )
+
+[node name="PressurePlate" type="Area2D"]
+position = Vector2( 512, 128 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Abstract for an interactive object with collisions and active area"
+}
+normalSprite = ExtResource( 1 )
+pressedSprite = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
+position = Vector2( 0, -8 )
+z_as_relative = false
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -9 )
+shape = SubResource( 22 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( -2, -1 )
+occluder = SubResource( 24 )
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 0
+position = Vector2( 0, -9 )
+enabled = false
+texture = ExtResource( 4 )
+color = Color( 0.933333, 0.858824, 0.709804, 0.698039 )
+range_item_cull_mask = 7
+shadow_item_cull_mask = 0
+
+[node name="LightRegion" type="Area2D" parent="Light2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light2D/LightRegion"]
+shape = SubResource( 25 )
+disabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_PressurePlate_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_PressurePlate_area_exited"]

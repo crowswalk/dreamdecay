@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/spr_atlas_obj_dr.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 6, 3.5 )
+
+[sub_resource type="OccluderPolygon2D" id=24]
+polygon = PoolVector2Array( -6, -7, 6, -7, 6, 0, -6, 0 )
+
+[node name="Chair" type="RigidBody2D"]
+mode = 1
+__meta__ = {
+"_editor_description_": "Abstract for an interactive object with collisions and active area"
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
+position = Vector2( 0, -8 )
+texture = SubResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3.5 )
+shape = SubResource( 21 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 24 )

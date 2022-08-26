@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/scripts/g_itm_flashlight.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/tx_spotlight_128.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/spr_itm_flashlight.tres" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 5, 8 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 11, 32 )
+
+[node name="Flashlight" type="Light2D"]
+show_behind_parent = true
+light_mask = 5
+enabled = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, 64 )
+color = Color( 0.933333, 0.858824, 0.709804, 1 )
+energy = 0.8
+range_z_min = -8
+range_z_max = 8
+range_item_cull_mask = 5
+shadow_enabled = true
+shadow_filter = 4
+shadow_filter_smooth = 8.0
+script = ExtResource( 1 )
+holdingpos = Vector2( 7, -9 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 6 )
+rotation = 3.14159
+texture = ExtResource( 3 )
+region_rect = Rect2( 16, 16, 6, 12 )
+
+[node name="PickupRegion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRegion"]
+position = Vector2( 0, 6 )
+shape = SubResource( 25 )
+
+[node name="LightRegion" type="Area2D" parent="."]
+position = Vector2( 0, 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightRegion"]
+position = Vector2( 0, 35 )
+shape = SubResource( 24 )
+
+[connection signal="area_entered" from="PickupRegion" to="." method="_on_PickupRegion_area_entered"]
+[connection signal="area_exited" from="PickupRegion" to="." method="_on_PickupRegion_area_exited"]

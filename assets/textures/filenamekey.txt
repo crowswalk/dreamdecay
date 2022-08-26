@@ -1,0 +1,28 @@
+FILE NAMING KEY
+
+resource_atlas_entity_plane_name.extension
+
+RESOURCE TYPES
+pre: prefab scene
+spr: sprite
+ts: tileset
+tx: texture
+g: script
+
+ATLAS
+in filename IF this is a sprite atlas
+
+ENTITY TYPES
+obj: object (inanimate entity; not collectible)
+itm: item (inanimate entity; collectible)
+npc: non playable character
+chr: player character
+tl: tileset sprite
+ui: user interface sprite
+
+PLANES
+dr: dream plane
+dy: decay plane
+
+NAME
+Name of this specific entity
