@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/ts_dr.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/premade/pre_player_default.tscn" type="PackedScene" id=2]
@@ -8,7 +8,10 @@
 [ext_resource path="res://assets/premade/pre_obj_dy_shelf.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/premade/pre_obj_dr_shelf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/premade/pre_obj_dy_boxes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/premade/pre_itm_flashlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/premade/pre_obj_dy_chair.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/premade/pre_obj_dr_chair.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -94,6 +97,9 @@ position = Vector2( 312, 372 )
 [node name="Boxes" parent="PlaneManager/Decay" instance=ExtResource( 8 )]
 position = Vector2( 249, 203 )
 
+[node name="Chair" parent="PlaneManager/Decay" instance=ExtResource( 11 )]
+position = Vector2( 509, 193 )
+
 [node name="Dream" type="YSort" parent="PlaneManager"]
 
 [node name="Lights" type="Node2D" parent="PlaneManager/Dream"]
@@ -109,5 +115,10 @@ range_item_cull_mask = 7
 [node name="Player" parent="PlaneManager/Dream" instance=ExtResource( 2 )]
 position = Vector2( 421, 368 )
 
+[node name="Flashlight" parent="PlaneManager/Dream/Player" instance=ExtResource( 9 )]
+
 [node name="Shelf" parent="PlaneManager/Dream" instance=ExtResource( 7 )]
 position = Vector2( 373, 381 )
+
+[node name="Chair" parent="PlaneManager/Dream" instance=ExtResource( 12 )]
+position = Vector2( 497, 218 )
