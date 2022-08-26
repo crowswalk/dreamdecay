@@ -1,0 +1,46 @@
+FILE NAMING KEY
+
+resource_atlas_entity_plane_name.extension
+
+RESOURCE TYPES-----
+pre: prefab scene
+spr: sprite
+ts: tileset
+tx: texture
+g: gdscript
+c: csharp script
+fnt: font
+
+ATLAS-----
+in filename IF this is a sprite atlas
+
+ENTITY TYPES-----
+obj: object (inanimate entity; not collectible)
+itm: item (inanimate entity; collectible)
+npc: non playable character
+chr: player character
+tl: tileset sprite
+ui: user interface sprite
+mgr: manager
+
+PLANES-----
+dr: dream plane
+dy: decay plane
+
+NAME
+Name of this specific entity
+----------
+
+TODO: FINAL PROTOTYPE
+
+Programming convenience improvements:
+
+-"dream objects" and "decay objects" are actually the same object with a position node to go to
+-add GROUPS, for plane switching the spritesheet of each object just needs to be changed
+
+
+-integrate ink conversation
+-dialogue UI coding
+-character switching
+-character following
+
