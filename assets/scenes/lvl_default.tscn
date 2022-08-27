@@ -1,18 +1,13 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprites/ts_dr.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/premade/pre_player_default.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/g_mgr_planes.gd" type="Script" id=3]
 [ext_resource path="res://assets/scripts/g_mgr_cam.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/ts_dy.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/premade/pre_obj_dy_shelf.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/premade/pre_obj_dr_shelf.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/premade/pre_obj_dy_boxes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/premade/pre_obj_interactive.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/premade/pre_itm_flashlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
-[ext_resource path="res://assets/premade/pre_obj_dy_chair.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/premade/pre_obj_dr_chair.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/ui/premade/pre_obj_dr_chair_talkable.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -36,7 +31,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
-following = NodePath("../PlaneManager/Dream/Player")
+following = NodePath("../PlaneManager/Overworld/Player")
 lerpSpeed = 8
 camera_bounds_max = Vector2( 576, 448 )
 
@@ -55,7 +50,6 @@ color = Color( 0.376471, 0.27451, 0.435294, 1 )
 
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
-player = NodePath("Dream/Player")
 dreamset = ExtResource( 1 )
 decayset = ExtResource( 5 )
 
@@ -69,7 +63,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Walls" type="TileMap" parent="PlaneManager"]
+[node name="Lights" type="Node2D" parent="PlaneManager"]
+
+[node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
+position = Vector2( 288, 216 )
+scale = Vector2( 4.5, 3.375 )
+texture = ExtResource( 10 )
+color = Color( 0.933333, 0.858824, 0.709804, 1 )
+energy = 0.75
+range_item_cull_mask = 7
+
+[node name="Overworld" type="YSort" parent="PlaneManager"]
+
+[node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 2
@@ -80,48 +86,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Decay" type="YSort" parent="PlaneManager"]
-
-[node name="Lights" type="Node2D" parent="PlaneManager/Decay"]
-
-[node name="BigLight" type="Light2D" parent="PlaneManager/Decay/Lights"]
-position = Vector2( 288, 216 )
-scale = Vector2( 4.5, 3.375 )
-texture = ExtResource( 10 )
-color = Color( 0.933333, 0.858824, 0.709804, 1 )
-energy = 0.75
-range_item_cull_mask = 7
-
-[node name="Shelf" parent="PlaneManager/Decay" instance=ExtResource( 6 )]
-position = Vector2( 312, 372 )
-
-[node name="Boxes" parent="PlaneManager/Decay" instance=ExtResource( 8 )]
-position = Vector2( 249, 203 )
-
-[node name="Chair" parent="PlaneManager/Decay" instance=ExtResource( 11 )]
-position = Vector2( 509, 193 )
-
-[node name="Dream" type="YSort" parent="PlaneManager"]
-
-[node name="Lights" type="Node2D" parent="PlaneManager/Dream"]
-
-[node name="BigLight" type="Light2D" parent="PlaneManager/Dream/Lights"]
-position = Vector2( 288, 216 )
-scale = Vector2( 4.5, 3.375 )
-texture = ExtResource( 10 )
-color = Color( 0.933333, 0.858824, 0.709804, 1 )
-energy = 0.75
-range_item_cull_mask = 7
-
-[node name="Player" parent="PlaneManager/Dream" instance=ExtResource( 2 )]
+[node name="Player" parent="PlaneManager/Overworld" instance=ExtResource( 2 )]
 position = Vector2( 421, 368 )
 
-[node name="Flashlight" parent="PlaneManager/Dream/Player" instance=ExtResource( 9 )]
+[node name="Flashlight" parent="PlaneManager/Overworld/Player" instance=ExtResource( 9 )]
+visible = false
 
-[node name="Shelf" parent="PlaneManager/Dream" instance=ExtResource( 7 )]
-position = Vector2( 373, 381 )
-
-[node name="Chair" parent="PlaneManager/Dream" instance=ExtResource( 12 )]
-position = Vector2( 497, 218 )
-
-[node name="ChairInteractive" parent="PlaneManager/Dream" instance=ExtResource( 13 )]
+[node name="AbstractObject" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 282, 211 )
+decayposition = Vector2( -5, -5 )

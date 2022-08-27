@@ -4,7 +4,7 @@ extends Area2D
 
 var canIntr = false #whether you can interact
 
-func _process(delta):
+func _process(_delta):
 	if canIntr:
 		if Input.is_action_just_pressed("interact"):
 			print("interacting")

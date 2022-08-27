@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/spr_atlas_obj_dr.png" type="Texture" id=2]
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 2 )
-region = Rect2( 16, 16, 16, 16 )
+[ext_resource path="res://assets/scripts/g_obj_shiftable.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/spr_atlas_obj_dy.png" type="Texture" id=4]
+[ext_resource path="res://assets/scripts/decayhint.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 6, 3.5 )
@@ -16,16 +15,28 @@ extents = Vector2( 8, 6 )
 [sub_resource type="OccluderPolygon2D" id=24]
 polygon = PoolVector2Array( -6, -7, 6, -7, 6, 0, -6, 0 )
 
-[node name="AbstractObject" type="RigidBody2D"]
+[node name="AbstractObject" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
+script = ExtResource( 3 )
 __meta__ = {
 "_editor_description_": "Abstract for an interactive object with collisions and active area"
 }
+dreamsheet = ExtResource( 2 )
+decaysheet = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 position = Vector2( 0, -8 )
-texture = SubResource( 23 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 18, 16, 12, 16 )
+
+[node name="DecayPosition" type="Position2D" parent="."]
+rotation = -0.785398
+script = ExtResource( 5 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3.5 )

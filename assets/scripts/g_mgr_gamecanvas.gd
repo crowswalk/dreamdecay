@@ -8,7 +8,6 @@ onready var camera = $ViewportContainer/Viewport/Level/Camera2D
 
 func _process(delta):
 	pixel_perfect(delta)
-	
 	if Input.is_action_just_pressed("reset"):
 		reset_level()
 
