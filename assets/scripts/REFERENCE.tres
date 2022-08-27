@@ -35,11 +35,6 @@ TODO: FINAL PROTOTYPE
 
 Programming convenience improvements:
 
--"dream objects" and "decay objects" are actually the same object with a position node to go to
--add GROUPS, for plane switching the spritesheet of each object just needs to be changed
--adjust plane switching code to be more readable (probably after grouping)
-
-
 -integrate ink conversation
 -dialogue UI coding
 -character switching
