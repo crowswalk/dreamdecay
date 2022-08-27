@@ -419,3 +419,4 @@ __meta__ = {
 }
 
 [node name="DialogueBox" parent="." instance=ExtResource( 5 )]
+visible = false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/sprites/spr_obj_dr_button.tres" type="Texture" id=1]
-[ext_resource path="res://assets/scripts/g_obj_pressureplate.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/obsolete/g_obj_pressureplate.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/spr_obj_dr_buttonpressed.tres" type="Texture" id=3]
 [ext_resource path="res://assets/textures/tx_hardglow_64.png" type="Texture" id=4]
 

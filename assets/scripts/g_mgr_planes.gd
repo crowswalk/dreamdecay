@@ -1,6 +1,6 @@
 extends Node
 
-#change current plane the player is on (dream or decay)
+#change current plane you are on (dream or decay)
 
 export (NodePath) onready var player = get_node(player)
 onready var dream_layer = $Dream

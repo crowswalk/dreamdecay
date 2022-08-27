@@ -48,11 +48,11 @@ func rotate_light(dir):
 	else: #down
 		rotation_degrees = 0
 
-func _on_PickupRegion_area_entered(area):
+func _on_PickupRegion_area_entered(area): #obsolete; negated the ability to pick up/put down items
 	if area.name == "PlayerVisible":
 		holdable = true
 
-func _on_PickupRegion_area_exited(area):
+func _on_PickupRegion_area_exited(area): #obsolete; negated the ability to pick up/put down items
 	if area.name == "PlayerVisible":
 		holdable = false
 

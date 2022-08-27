@@ -9,6 +9,9 @@ export var speed : float
 onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
 
+func _physics_process(_delta):
+	read_input()
+
 func read_input():
 	velocity = Vector2()
 	
@@ -41,6 +44,3 @@ func read_input():
 		
 	velocity = velocity.normalized()
 	velocity = move_and_slide(velocity * 100)
-
-func _physics_process(_delta):
-	read_input()

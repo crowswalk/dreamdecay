@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/sprites/ts_dr.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/premade/pre_player_default.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
 [ext_resource path="res://assets/premade/pre_obj_dy_chair.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/premade/pre_obj_dr_chair.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/ui/premade/pre_obj_dr_chair_talkable.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -122,3 +123,5 @@ position = Vector2( 373, 381 )
 
 [node name="Chair" parent="PlaneManager/Dream" instance=ExtResource( 12 )]
 position = Vector2( 497, 218 )
+
+[node name="ChairInteractive" parent="PlaneManager/Dream" instance=ExtResource( 13 )]

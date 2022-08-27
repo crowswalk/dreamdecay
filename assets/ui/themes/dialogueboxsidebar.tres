@@ -17,7 +17,7 @@ border_width_right = 2
 border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+bg_color = Color( 0.0862745, 0.0862745, 0.0862745, 0.784314 )
 border_width_left = 2
 border_width_right = 2
 
@@ -25,41 +25,48 @@ border_width_right = 2
 content_margin_right = 16.0
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.6, 0.6, 0.6, 0.156863 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color( 1, 1, 1, 0.313726 )
 border_color = Color( 0.8, 0.8, 0.8, 0 )
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.6, 0.6, 0.6, 0.313726 )
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color( 1, 1, 1, 0.470588 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.6, 0.6, 0.6, 0.313726 )
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 2.0
+content_margin_right = 2.0
+bg_color = Color( 1, 1, 1, 0.392157 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.6, 0.6, 0.6, 0.12549 )
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color( 1, 1, 1, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 0.313726 )
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
-expand_margin_left = 4.0
-expand_margin_right = 4.0
-expand_margin_top = 4.0
-expand_margin_bottom = 4.0
 
 [resource]
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
@@ -101,7 +108,7 @@ VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
 VScrollBar/icons/increment_pressed = null
 VScrollBar/styles/grabber = SubResource( 3 )
-VScrollBar/styles/grabber_highlight = SubResource( 4 )
-VScrollBar/styles/grabber_pressed = SubResource( 5 )
+VScrollBar/styles/grabber_highlight = SubResource( 8 )
+VScrollBar/styles/grabber_pressed = SubResource( 9 )
 VScrollBar/styles/scroll = SubResource( 6 )
 VScrollBar/styles/scroll_focus = null
