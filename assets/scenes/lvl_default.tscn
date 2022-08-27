@@ -94,4 +94,5 @@ visible = false
 
 [node name="AbstractObject" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
 position = Vector2( 282, 211 )
-decayposition = Vector2( -5, -5 )
+decayX = 17
+decayY = 3
