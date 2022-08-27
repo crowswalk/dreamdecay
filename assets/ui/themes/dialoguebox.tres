@@ -1,6 +1,9 @@
-[gd_resource type="Theme" load_steps=4 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
-[ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_regular_18.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_bolditalic_12.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_italic_12.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_regular_12.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_bold_12.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 4.0
@@ -16,9 +19,47 @@ border_width_bottom = 2
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 border_width_left = 2
+border_width_right = 2
+
+[sub_resource type="StyleBoxEmpty" id=7]
+content_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0.156863 )
+border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0.313726 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0.313726 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0.12549 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
 
 [resource]
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
@@ -38,16 +79,29 @@ RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/selection_color = Color( 1, 1, 1, 1 )
-RichTextLabel/constants/line_separation = -4
+RichTextLabel/constants/line_separation = -6
 RichTextLabel/constants/shadow_as_outline = 0
 RichTextLabel/constants/shadow_offset_x = 0
 RichTextLabel/constants/shadow_offset_y = 0
 RichTextLabel/constants/table_hseparation = 0
 RichTextLabel/constants/table_vseparation = 0
-RichTextLabel/fonts/bold_font = null
-RichTextLabel/fonts/bold_italics_font = null
-RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/bold_font = ExtResource( 4 )
+RichTextLabel/fonts/bold_italics_font = ExtResource( 1 )
+RichTextLabel/fonts/italics_font = ExtResource( 2 )
 RichTextLabel/fonts/mono_font = null
-RichTextLabel/fonts/normal_font = ExtResource( 1 )
+RichTextLabel/fonts/normal_font = ExtResource( 3 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
+ScrollContainer/styles/bg = SubResource( 7 )
+VBoxContainer/constants/separation = 8
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/decrement_pressed = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/icons/increment_pressed = null
+VScrollBar/styles/grabber = SubResource( 3 )
+VScrollBar/styles/grabber_highlight = SubResource( 4 )
+VScrollBar/styles/grabber_pressed = SubResource( 5 )
+VScrollBar/styles/scroll = SubResource( 6 )
+VScrollBar/styles/scroll_focus = null

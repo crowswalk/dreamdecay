@@ -28,7 +28,7 @@ func _ready():
 		fadingIn = true
 		overlay.color.a = 1 #solid black
 
-func _process(delta):
+func _process(_delta):
 	if fadingIn: #ok i know there's a way to make this more efficient but idk coroutines in godot
 		yield(get_tree().create_timer(0.6), "timeout") #pause before fading in
 		fadingIn = false

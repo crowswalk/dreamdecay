@@ -12,7 +12,7 @@ func _ready():
 	pickupregion.disabled = true
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	if self.holding:
 		rotate_light(player.direction)
 	if Input.is_action_just_pressed("use_item"):
@@ -56,7 +56,7 @@ func _on_PickupRegion_area_exited(area):
 	if area.name == "PlayerVisible":
 		holdable = false
 
-func toggle_held(holding): #obsolete; negated the ability to pick up/put down items
+func toggle_held(): #obsolete; negated the ability to pick up/put down items
 	var dest = self.global_position
 	if holding:
 		player.remove_child(self)

@@ -35,6 +35,7 @@ __meta__ = {
 size = Vector2( 482, 272 )
 handle_input_locally = false
 render_target_update_mode = 3
+gui_disable_input = true
 
 [node name="Level" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
 
