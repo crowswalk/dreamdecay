@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/sprites/spr_obj_dy_chair.tres" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/obsolete/spr_obj_dy_chair.tres" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 6, 3.5 )

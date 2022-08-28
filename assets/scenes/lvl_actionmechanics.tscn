@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/premade/obsolete/pre_chr_mannequin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
 [ext_resource path="res://assets/premade/obsolete/pre_obj_dy_shelf.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/premade/pre_obj_boxes.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/premade/obsolete/pre_obj_boxes.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/premade/obsolete/pre_obj_dr_pressureplate.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/premade/obsolete/pre_obj_dr_chair_interactive.tscn" type="PackedScene" id=15]
 

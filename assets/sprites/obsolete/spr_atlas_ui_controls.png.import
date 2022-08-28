@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_atlas_ui_controls.png-f0067041f96108981f7f4ec3cce56b8d.stex"
+path="res://.import/spr_atlas_ui_controls.png-8c3f8e002c8c7644988031fb7ade2966.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spr_atlas_ui_controls.png"
-dest_files=[ "res://.import/spr_atlas_ui_controls.png-f0067041f96108981f7f4ec3cce56b8d.stex" ]
+source_file="res://assets/sprites/obsolete/spr_atlas_ui_controls.png"
+dest_files=[ "res://.import/spr_atlas_ui_controls.png-8c3f8e002c8c7644988031fb7ade2966.stex" ]
 
 [params]
 

@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/sprites/ts_dr.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/premade/pre_player_default.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/g_mgr_planes.gd" type="Script" id=3]
 [ext_resource path="res://assets/scripts/g_mgr_cam.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/ts_dy.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/premade/pre_obj_interactive.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/premade/pre_obj_chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/premade/pre_obj_shelf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/premade/pre_itm_flashlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
 
@@ -47,6 +48,9 @@ __meta__ = {
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.376471, 0.27451, 0.435294, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlaneManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -64,6 +68,9 @@ __meta__ = {
 }
 
 [node name="Lights" type="Node2D" parent="PlaneManager"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BigLight" type="Light2D" parent="PlaneManager/Lights"]
 position = Vector2( 288, 216 )
@@ -74,6 +81,9 @@ energy = 0.75
 range_item_cull_mask = 7
 
 [node name="Overworld" type="YSort" parent="PlaneManager"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Walls" type="TileMap" parent="PlaneManager/Overworld"]
 tile_set = ExtResource( 5 )
@@ -92,7 +102,12 @@ position = Vector2( 421, 368 )
 [node name="Flashlight" parent="PlaneManager/Overworld/Player" instance=ExtResource( 9 )]
 visible = false
 
-[node name="AbstractObject" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
-position = Vector2( 282, 211 )
-decayX = 17
-decayY = 3
+[node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 288, 161 )
+decayX = 55
+decayY = 13
+
+[node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 344, 196 )
+decayX = -51
+decayY = -12

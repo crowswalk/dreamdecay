@@ -136,7 +136,6 @@ text = "This Friday, dining facilities will resume regular meal service, and stu
 scroll_active = false
 
 [node name="controls" type="Control" parent="."]
-visible = false
 margin_right = 512.0
 margin_bottom = 136.0
 size_flags_horizontal = 0
@@ -419,4 +418,3 @@ __meta__ = {
 }
 
 [node name="DialogueBox" parent="." instance=ExtResource( 5 )]
-visible = false

@@ -10,7 +10,8 @@ onready var animPlayer = $AnimationPlayer
 var idle : String = "DownIdle"
 
 func _physics_process(_delta):
-	read_input()
+	if Gamevars.mode == "walk":
+		read_input()
 
 func read_input():
 	velocity = Vector2()

@@ -7,7 +7,11 @@ var canIntr = false #whether you can interact
 func _process(_delta):
 	if canIntr:
 		if Input.is_action_just_pressed("interact"):
-			print("interacting")
+			if Gamevars.mode == "walk":
+				Gamevars.mode = "talk"
+				print("interacting")
+			else:
+				Gamevars.mode = "walk"
 			pass
 
 func _on_InteractArea_body_entered(body):

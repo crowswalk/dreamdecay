@@ -1,45 +1,46 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/scripts/g_obj_shiftable.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/spr_atlas_obj_dr.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/spr_atlas_obj_dy.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/spr_atlas_obj_dy.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/spr_atlas_obj_dr.png" type="Texture" id=3]
 [ext_resource path="res://assets/scripts/g_obj_interactive.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 6, 3.5 )
+extents = Vector2( 24, 8 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 8, 6 )
+extents = Vector2( 29, 10.5 )
 
 [sub_resource type="OccluderPolygon2D" id=24]
-polygon = PoolVector2Array( -6, -7, 6, -7, 6, 0, -6, 0 )
+polygon = PoolVector2Array( -25, -16, 23, -16, 23, 0, -25, 0 )
 
-[node name="Chair" type="RigidBody2D" groups=["shiftable"]]
+[node name="Shelf" type="RigidBody2D" groups=["shiftable"]]
 mode = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "Abstract for an interactive object with collisions and active area"
 }
-dreamsheet = ExtResource( 2 )
-decaysheet = ExtResource( 3 )
+dreamsheet = ExtResource( 3 )
+decaysheet = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
-position = Vector2( 0, -8 )
-texture = ExtResource( 2 )
+position = Vector2( 0, -32 )
+texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
+region_rect = Rect2( 80, 16, 48.0001, 64 )
 
 [node name="Hint" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
+show_behind_parent = true
 light_mask = 4
-texture = ExtResource( 3 )
-offset = Vector2( 0, -8 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -32 )
 region_enabled = true
-region_rect = Rect2( 18, 16, 12, 16 )
+region_rect = Rect2( 80, 16, 48.0001, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -3.5 )
+position = Vector2( -1, -8 )
 shape = SubResource( 21 )
 
 [node name="ActiveArea" type="Area2D" parent="."]
@@ -50,7 +51,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActiveArea"]
-position = Vector2( 0, -3 )
+position = Vector2( -1, -5.5 )
 shape = SubResource( 22 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
