@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/dialogue_prototype.ink-bd6bc46ef0f1952d3c2cc664eae85685.res"
+
+[deps]
+
+source_file="res://assets/ink/dialogue_prototype.ink"
+dest_files=[ "res://.import/dialogue_prototype.ink-bd6bc46ef0f1952d3c2cc664eae85685.res" ]
+
+[params]
+
+is_master_file=true
+compress=true

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tx_glow_128.png-6eb37c0e33536bf8c41618f988bbf246.stex"
+path="res://import/tx_glow_128.png-6eb37c0e33536bf8c41618f988bbf246.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/tx_glow_128.png"
-dest_files=[ "res://.import/tx_glow_128.png-6eb37c0e33536bf8c41618f988bbf246.stex" ]
+dest_files=[ "res://import/tx_glow_128.png-6eb37c0e33536bf8c41618f988bbf246.stex" ]
 
 [params]
 

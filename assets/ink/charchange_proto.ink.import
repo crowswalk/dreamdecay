@@ -1,0 +1,15 @@
+[remap]
+
+importer="ink"
+type="Resource"
+path="res://.import/charchange_proto.ink-6f9b8ff78ea6c6cc71c5f9b83f05c325.res"
+
+[deps]
+
+source_file="res://assets/ink/charchange_proto.ink"
+dest_files=[ "res://.import/charchange_proto.ink-6f9b8ff78ea6c6cc71c5f9b83f05c325.res" ]
+
+[params]
+
+is_master_file=true
+compress=true

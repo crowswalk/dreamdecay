@@ -47,6 +47,7 @@ __meta__ = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.376471, 0.27451, 0.435294, 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -68,6 +69,7 @@ __meta__ = {
 }
 
 [node name="Lights" type="Node2D" parent="PlaneManager"]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }

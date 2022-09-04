@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+margin_right = 225.0
+margin_bottom = 55.0
+bbcode_enabled = true
+bbcode_text = "[b]Character 1:[/b] I am saying a [i]thing[/i] to you. And I am very cool, so you should listen."
+text = "Character 1: I am saying a thing to you. And I am very cool, so you should listen."
+fit_content_height = true
