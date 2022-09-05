@@ -121,7 +121,12 @@ position = Vector2( 336, 160 )
 position = Vector2( 504, 96 )
 
 [node name="Boxes" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
-position = Vector2( 216, 176 )
+position = Vector2( 222, 173 )
+inDream = false
+
+[node name="Boxes2" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 353, 245 )
+inDream = false
 
 [node name="Shelfside" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
 position = Vector2( 200, 232 )

@@ -13,7 +13,14 @@ export var inDream : bool = true
 export var inDecay : bool = true
 
 func _ready():
-	decaypos = dreampos + Vector2(decayX, decayY)
+	if !inDecay:
+		decaypos = Vector2(-100, -100)
+	else:
+		decaypos = dreampos + Vector2(decayX, decayY)
+	if !inDream:
+		dreampos = Vector2(-100, -100)
+	if !Engine.editor_hint:
+		self.set_global_position(dreampos)
 
 func _process(_delta):
 	if Engine.editor_hint:
