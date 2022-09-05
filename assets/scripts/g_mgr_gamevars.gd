@@ -5,3 +5,4 @@ extends Node
 onready var player = null
 onready var mode = "walk"
 onready var dream = true
+onready var dialoguebox = null

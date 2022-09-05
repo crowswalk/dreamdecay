@@ -6,6 +6,9 @@ onready var viewport = $ViewportContainer/Viewport
 onready var current_level = $ViewportContainer/Viewport/Level
 onready var camera = $ViewportContainer/Viewport/Level/Camera2D
 
+func _ready():
+	Gamevars.dialoguebox = $UserInterface/DialogueBox
+
 func _process(delta):
 	pixel_perfect(delta)
 	if Input.is_action_just_pressed("reset"):

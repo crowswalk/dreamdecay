@@ -9,6 +9,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("interact"):
 			if Gamevars.mode == "walk":
 				Gamevars.mode = "talk"
+				Gamevars.dialoguebox.panel.set_visible(true)
 				print("interacting")
 			pass
 
