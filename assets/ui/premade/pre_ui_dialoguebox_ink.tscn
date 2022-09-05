@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ui/themes/dialoguechoice.tres" type="Theme" id=1]
+[ext_resource path="res://assets/scripts/g_ui_dialogueboxInk.gd" type="Script" id=2]
+[ext_resource path="res://assets/ink/dialogue_prototype.ink" type="Resource" id=3]
+[ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=4]
+[ext_resource path="res://assets/ui/premade/pre_ui_dialoguebox_choicebox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/ui/premade/pre_ui_dialoguebox_entry.tscn" type="PackedScene" id=6]
+
+[node name="DialogueBox" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="InkPlayer" type="Node" parent="."]
+script = ExtResource( 4 )
+story = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -336.0
+margin_right = -56.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.5
+margin_top = -180.0
+margin_right = 120.5
+margin_bottom = 180.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
+margin_right = 241.0
+margin_bottom = 360.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
+margin_right = 225.0
+margin_bottom = 346.0
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 225.0
+
+[node name="RichTextLabel7" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 63.0
+margin_right = 225.0
+margin_bottom = 118.0
+
+[node name="Choicebox" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 126.0
+margin_right = 225.0
+margin_bottom = 346.0

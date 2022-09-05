@@ -136,9 +136,9 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-2d/options/use_nvidia_rect_flicker_workaround=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
+2d/snapping/use_gpu_pixel_snap=true
 quality/directional_shadow/size=1280
 quality/shadow_atlas/quadrant_2_subdiv=0
 quality/shadow_atlas/quadrant_3_subdiv=0
@@ -147,8 +147,6 @@ quality/reflections/texture_array_reflections=false
 quality/reflections/high_quality_ggx=false
 quality/depth_prepass/enable=false
 gles3/shaders/shader_compilation_mode=1
-quality/subsurface_scattering/quality=0
-quality/subsurface_scattering/weight_samples=false
 
 [world]
 
