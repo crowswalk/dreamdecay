@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sprites/ts_dr.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/premade/pre_player_default.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://assets/sprites/ts_dy.tres" type="TileSet" id=5]
 [ext_resource path="res://assets/premade/pre_obj_chair.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/premade/pre_obj_shelf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/premade/pre_obj_boxes.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/premade/pre_itm_flashlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/tx_glow_128.png" type="Texture" id=10]
+[ext_resource path="res://assets/premade/pre_obj_shelfside.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -34,7 +36,7 @@ __meta__ = {
 }
 following = NodePath("../PlaneManager/Overworld/Player")
 lerpSpeed = 8
-camera_bounds_max = Vector2( 576, 448 )
+camera_bounds_max = Vector2( 574, 446 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 margin_left = -480.0
@@ -47,7 +49,7 @@ __meta__ = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.376471, 0.27451, 0.435294, 1 )
+color = Color( 0.505882, 0.372549, 0.584314, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -77,7 +79,7 @@ position = Vector2( 288, 216 )
 scale = Vector2( 4.5, 3.375 )
 texture = ExtResource( 10 )
 color = Color( 0.933333, 0.858824, 0.709804, 1 )
-energy = 0.75
+energy = 0.9
 range_item_cull_mask = 7
 
 [node name="Overworld" type="YSort" parent="PlaneManager"]
@@ -103,11 +105,54 @@ position = Vector2( 421, 368 )
 visible = false
 
 [node name="Shelf" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
-position = Vector2( 288, 161 )
+position = Vector2( 224, 160 )
 decayX = 55
 decayY = 13
 
+[node name="Shelf2" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 280, 160 )
+decayX = 54
+decayY = 39
+
+[node name="Shelf3" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 336, 160 )
+
+[node name="Shelf4" parent="PlaneManager/Overworld" instance=ExtResource( 7 )]
+position = Vector2( 504, 96 )
+
+[node name="Boxes" parent="PlaneManager/Overworld" instance=ExtResource( 8 )]
+position = Vector2( 216, 176 )
+
+[node name="Shelfside" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 200, 232 )
+
+[node name="Shelfside2" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 408, 288 )
+decayY = -8
+
+[node name="Shelfside3" parent="PlaneManager/Overworld" instance=ExtResource( 11 )]
+position = Vector2( 408, 216 )
+decayX = -5
+
 [node name="Chair" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
-position = Vector2( 344, 196 )
+position = Vector2( 280, 360 )
+
+[node name="Chair2" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 264, 360 )
 decayX = -51
 decayY = -12
+
+[node name="Chair3" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 304, 360 )
+
+[node name="Chair4" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 320, 360 )
+
+[node name="Chair5" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 344, 360 )
+decayY = 18
+
+[node name="Chair6" parent="PlaneManager/Overworld" instance=ExtResource( 6 )]
+position = Vector2( 360, 360 )
+decayX = 1
+decayY = 11
