@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_italic_14.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/scripts/g_ui_dialoguebox_button.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/g_ui_dialoguebox_choice.gd" type="Script" id=2]
 
 [node name="Choice" type="MarginContainer"]
 margin_right = 960.0

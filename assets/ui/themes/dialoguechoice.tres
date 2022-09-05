@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_bold_12.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_regular_12.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/ui/fonts/cambay/fnt_cambay_italic_12.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/ui/themes/choicenormal.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 4.0
@@ -24,6 +23,17 @@ content_margin_right = 4.0
 content_margin_top = 4.0
 content_margin_bottom = 0.0
 bg_color = Color( 0, 0, 0, 0.470588 )
+border_width_left = 2
+border_color = Color( 0.8, 0.8, 0.8, 0.470588 )
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 0.0
+bg_color = Color( 0, 0, 0, 0.156863 )
 border_width_left = 2
 border_color = Color( 0.8, 0.8, 0.8, 0.470588 )
 corner_radius_top_right = 2
@@ -92,7 +102,7 @@ Button/fonts/font = ExtResource( 2 )
 Button/styles/disabled = SubResource( 2 )
 Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 10 )
-Button/styles/normal = ExtResource( 6 )
+Button/styles/normal = SubResource( 11 )
 Button/styles/pressed = SubResource( 2 )
 LinkButton/colors/font_color = Color( 1, 1, 1, 0.784314 )
 LinkButton/colors/font_color_focus = Color( 1, 1, 1, 1 )
@@ -106,7 +116,7 @@ RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/selection_color = Color( 1, 1, 1, 1 )
-RichTextLabel/constants/line_separation = -6
+RichTextLabel/constants/line_separation = -4
 RichTextLabel/constants/shadow_as_outline = 0
 RichTextLabel/constants/shadow_offset_x = 0
 RichTextLabel/constants/shadow_offset_y = 0

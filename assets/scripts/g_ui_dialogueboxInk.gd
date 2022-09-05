@@ -5,9 +5,9 @@ onready var scroll = $Panel/MarginContainer/ScrollContainer
 onready var vbox = $Panel/MarginContainer/ScrollContainer/VBoxContainer
 onready var player = $InkPlayer
 
-var textEntry = preload("res://assets/ui/premade/pre_ui_dialoguebox_entry.tscn")
-var choiceBox = preload("res://assets/ui/premade/pre_ui_dialoguebox_choicebox.tscn")
-var button = preload("res://assets/ui/premade/pre_ui_dialoguebox_button.tscn")
+var textEntry = preload("res://assets/premade/pre_ui_dialoguebox_entry.tscn")
+var choiceBox = preload("res://assets/premade/pre_ui_dialoguebox_choicebox.tscn")
+var choice = preload("res://assets/premade/pre_ui_dialoguebox_choice.tscn")
 
 export var talk : bool #for isolated testing purposes; default to false for full game
 
@@ -78,9 +78,9 @@ func create_choicebox(choices):
 	var newChoiceBox = choiceBox.instance()
 	delete_children(newChoiceBox)
 	
-	for choice in choices:
-		var newChoice = button.instance()
-		newChoice.set_button_text(choice)
+	for option in choices:
+		var newChoice = choice.instance()
+		newChoice.set_choice_text(option)
 		newChoiceBox.add_child(newChoice)
 		
 	vbox.add_child(newChoiceBox)

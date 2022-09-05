@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/ui/themes/dialoguechoice.tres" type="Theme" id=1]
-[ext_resource path="res://assets/scripts/g_ui_dialogueboxInk.gd" type="Script" id=2]
-[ext_resource path="res://assets/ink/charchange_proto.ink" type="Resource" id=3]
-[ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=4]
-[ext_resource path="res://assets/ui/premade/pre_ui_dialoguebox_choicebox.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/ui/premade/pre_ui_dialoguebox_entry.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/premade/pre_ui_dialoguebox_choicebox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/premade/pre_ui_dialoguebox_entry.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=3]
+[ext_resource path="res://assets/ui/themes/dialoguechoice.tres" type="Theme" id=4]
+[ext_resource path="res://assets/scripts/g_ui_dialogueboxInk.gd" type="Script" id=5]
+[ext_resource path="res://assets/ink/charchange_proto.ink" type="Resource" id=6]
 
 [node name="DialogueBox" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
+theme = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="InkPlayer" type="Node" parent="."]
-script = ExtResource( 4 )
-story = ExtResource( 3 )
+script = ExtResource( 3 )
+story = ExtResource( 6 )
 
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 1.0
@@ -45,14 +45,14 @@ margin_bottom = 374.0
 size_flags_horizontal = 3
 custom_constants/separation = 8
 
-[node name="RichTextLabel" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+[node name="RichTextLabel" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_bottom = 51.0
 
-[node name="RichTextLabel7" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
+[node name="RichTextLabel7" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 59.0
 margin_bottom = 110.0
 
-[node name="Choicebox" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 5 )]
+[node name="Choicebox" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 118.0
 margin_right = 219.0
 margin_bottom = 374.0
