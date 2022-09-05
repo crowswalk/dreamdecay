@@ -5,19 +5,19 @@
 [node name="VBoxContainer" type="VBoxContainer"]
 margin_right = 960.0
 margin_bottom = 50.0
-custom_constants/separation = 4
+custom_constants/separation = 0
 
 [node name="Choice" parent="." instance=ExtResource( 1 )]
-margin_bottom = 32.0
+margin_bottom = 28.0
 
 [node name="Choice2" parent="." instance=ExtResource( 1 )]
-margin_top = 36.0
-margin_bottom = 68.0
+margin_top = 28.0
+margin_bottom = 56.0
 
 [node name="Choice3" parent="." instance=ExtResource( 1 )]
-margin_top = 72.0
-margin_bottom = 104.0
+margin_top = 56.0
+margin_bottom = 84.0
 
 [node name="Choice4" parent="." instance=ExtResource( 1 )]
-margin_top = 108.0
-margin_bottom = 140.0
+margin_top = 84.0
+margin_bottom = 112.0

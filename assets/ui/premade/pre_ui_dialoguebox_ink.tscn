@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/ui/themes/dialoguechoice.tres" type="Theme" id=1]
 [ext_resource path="res://assets/scripts/g_ui_dialogueboxInk.gd" type="Script" id=2]
-[ext_resource path="res://assets/ink/dialogue_prototype.ink" type="Resource" id=3]
+[ext_resource path="res://assets/ink/charchange_proto.ink" type="Resource" id=3]
 [ext_resource path="res://addons/paulloz.ink/InkPlayer.cs" type="Script" id=4]
 [ext_resource path="res://assets/ui/premade/pre_ui_dialoguebox_choicebox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ui/premade/pre_ui_dialoguebox_entry.tscn" type="PackedScene" id=6]
@@ -40,19 +40,19 @@ margin_bottom = 360.0
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
-margin_right = 225.0
-margin_bottom = 358.0
+margin_right = 219.0
+margin_bottom = 374.0
 size_flags_horizontal = 3
+custom_constants/separation = 8
 
 [node name="RichTextLabel" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
-margin_right = 225.0
+margin_bottom = 51.0
 
 [node name="RichTextLabel7" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 63.0
-margin_right = 225.0
-margin_bottom = 118.0
+margin_top = 59.0
+margin_bottom = 110.0
 
 [node name="Choicebox" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 126.0
-margin_right = 225.0
-margin_bottom = 358.0
+margin_top = 118.0
+margin_right = 219.0
+margin_bottom = 374.0

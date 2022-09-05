@@ -18,12 +18,11 @@ var currentChoicebox #currently displaying node of choice buttons
 var currentChoiceboxEntries #current choice buttons
 
 func _ready():
+	delete_children(vbox)
+	panel.set_visible(false)
 	player.LoadStory()
 	if talk:
 		Gamevars.mode = "talk"
-	delete_children(vbox)
-	panel.set_visible(false)
-	
 
 func _process(_delta):
 	if Gamevars.mode == "talk":
@@ -36,11 +35,8 @@ func _process(_delta):
 					currentChoice = 0
 				currentChoiceboxEntries[currentChoice].set_highlighted(true)
 			
-			if Input.is_action_just_pressed("interact"):
-				#print(choiceArray[currentChoice])
-				
+			if Input.is_action_just_pressed("interact"): #choice is submitted
 				vbox.remove_child(currentChoicebox)
-				
 				create_entry(choiceArray[currentChoice])
 				
 				if currentChoice < 0:
@@ -51,35 +47,42 @@ func _process(_delta):
 		
 		elif Input.is_action_just_pressed("interact"):
 			_proceed()
-		
+
+#progress the ink player
 func _proceed():
-	if !player.get_CanContinue() && !player.get_HasChoices():
+	if !player.get_CanContinue() && !player.get_HasChoices(): #end of conversation
 		clear_and_reset()
-	elif !player.get_HasChoices(): #normal text
+	elif !player.get_HasChoices(): #create normal text entry
 		player.Continue()
 		create_entry(player.get_CurrentText())
-		displayingChoices = false
-	elif !displayingChoices: #new choice node
+		
+	elif !displayingChoices: #create entry with choices
 		choiceArray = player.get_CurrentChoices()
 		create_choicebox(choiceArray)
 		displayingChoices = true
 		currentChoice = -1
+		
+	#scroll to bottom when new message appears (make this tween later)
 	yield(get_tree(), "idle_frame")
 	scroll.set_v_scroll(scroll.get_v_scrollbar().max_value)
 
-
+#create normal text entry
 func create_entry(text):
 	var newEntry = textEntry.instance()
 	vbox.add_child(newEntry)
 	newEntry.text = text
-	
+	displayingChoices = false
+
+#create entry with choices
 func create_choicebox(choices):
 	var newChoiceBox = choiceBox.instance()
 	delete_children(newChoiceBox)
+	
 	for choice in choices:
 		var newChoice = button.instance()
 		newChoice.set_button_text(choice)
 		newChoiceBox.add_child(newChoice)
+		
 	vbox.add_child(newChoiceBox)
 	currentChoicebox = newChoiceBox
 	currentChoiceboxEntries = newChoiceBox.get_children()
@@ -88,8 +91,8 @@ static func delete_children(node):
 	for n in node.get_children():
 		node.remove_child(n)
 		n.queue_free()
-func clear_and_reset():
-	print("ended")
+
+func clear_and_reset(): #for when the conversation has ended; reset everything
 	panel.set_visible(false)
 	player.Reset()
 	player.LoadStory()
